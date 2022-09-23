@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 szam.setText(pluszEgy);
                 if (szamlalo == 0){
                     szam.setTextColor(Color.BLUE);
+                }else if(isPrim(szamlalo)){
+                    szam.setTextColor(Color.WHITE);
                 }else if (szamlalo > 0){
                     szam.setTextColor(Color.GREEN);
                 }
@@ -61,5 +63,17 @@ public class MainActivity extends AppCompatActivity {
         szam = findViewById(R.id.szam);
         plusz = findViewById(R.id.plusz);
         minusz = findViewById(R.id.minusz);
+    }
+
+    static boolean isPrim(int n)
+    {
+        if (n <= 1)
+            return false;
+
+        for (int i = 2; i < n; i++)
+            if (n % i == 0)
+                return false;
+
+        return true;
     }
 }
