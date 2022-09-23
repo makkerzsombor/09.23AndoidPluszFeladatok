@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 String minuszEgy = String.format("%s",szamlalo);
                 szam.setText(minuszEgy);
                 if (szamlalo==0){
-                    szam.setTextColor(Color.BLUE);
+                    szam.setTextColor(Color.rgb(255,255,255));
                 }else if (szamlalo < 0){
                     szam.setTextColor(Color.RED);
                 }
@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
     static boolean isPrim(int n)
     {
-        if (n <= 1)
+        if (n <= 1){
             return false;
-
-        for (int i = 2; i < n; i++)
+        }
+        for (int i = 2; i < n; i++){
             if (n % i == 0)
                 return false;
-
+        }
         return true;
     }
 }
